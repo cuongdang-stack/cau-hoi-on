@@ -1,8 +1,26 @@
 <!doctype html>
 <html lang="vi">
 <head>
+<script>
+(function(){
+  var PASSWORD = "nhomCBGS2026";
+  if (sessionStorage.getItem("cbgs_authed") === "1") return;
+  var input = prompt("Nhập mật khẩu để vào ứng dụng:");
+  if (input === PASSWORD) {
+    sessionStorage.setItem("cbgs_authed", "1");
+    return;
+  }
+  document.open();
+  document.write('<!doctype html><html><head><meta charset="utf-8"><title>Yêu cầu mật khẩu</title></head><body style="font:16px system-ui;text-align:center;padding:80px;color:#991b1b;background:#f4f6f9">');
+  document.write('<h1>🔒 Cần mật khẩu để vào ứng dụng</h1>');
+  document.write('<p style="color:#637087">Vui lòng tải lại trang và nhập đúng mật khẩu.</p>');
+  document.write('<button onclick="location.reload()" style="margin-top:20px;padding:12px 24px;font-size:16px;cursor:pointer;border:0;border-radius:8px;background:#1d4ed8;color:#fff">↻ Thử lại</button>');
+  document.write('</body></html>');
+  document.close();
+  throw new Error("blocked");
+})();
+</script>
 <meta charset="utf-8">
-<script src="auth.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ứng dụng ôn tập câu hỏi</title>
 <style>
