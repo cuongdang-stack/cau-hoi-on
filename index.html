@@ -34,6 +34,7 @@ main{max-width:1120px;margin:20px auto;padding:0 14px 40px}
 .stat{padding:14px 16px}.stat strong{display:block;font-size:23px}.stat span{color:var(--muted);font-size:13px}
 .panel{padding:16px;margin-bottom:16px}
 .filters{display:grid;grid-template-columns:2fr 1.4fr 1.4fr auto;gap:10px;align-items:end}
+.filters.filters-3{grid-template-columns:1.4fr 1.4fr auto}
 label{display:block;font-size:13px;color:var(--muted);font-weight:650;margin-bottom:5px}
 input,select,button{font:inherit}input[type=search],select{width:100%;padding:10px 11px;border:1px solid #cbd4e1;border-radius:9px;background:#fff;color:var(--text);min-height:43px}
 button{border:0;border-radius:9px;padding:10px 14px;cursor:pointer;font-weight:650;min-height:42px}
@@ -54,18 +55,19 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .list-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.small{font-size:13px;color:var(--muted)}
 .empty{padding:30px;text-align:center;color:var(--muted)}
 
-/* TABS */
+/* ====== TABS ====== */
 .tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(25,42,70,.04)}
 .tabs .wrap{display:flex;gap:4px;padding:6px 14px;overflow-x:auto}
 .tab{background:transparent;border:0;border-radius:8px 8px 0 0;padding:10px 16px;color:var(--muted);font-weight:700;cursor:pointer;border-bottom:3px solid transparent;min-height:42px;white-space:nowrap}
 .tab.active{color:var(--primary);border-bottom-color:var(--primary);background:var(--primary-soft)}
-.tab-panel{display:none}.tab-panel.active{display:block}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
 
-/* QUIZ */
+/* ====== QUIZ ====== */
 .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px;margin-bottom:16px}
 .quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .quiz-options{display:grid;gap:9px;margin:16px 0}
-.quiz-option{display:grid;grid-template-columns:26px 32px 1fr auto;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;transition:all .15s;user-select:none}
+.quiz-option{display:grid;grid-template-columns:26px 32px 1fr;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;transition:all .15s;user-select:none}
 .quiz-option:hover{border-color:var(--primary);background:var(--primary-soft)}
 .quiz-option.selected{border-color:var(--primary);background:var(--primary-soft)}
 .quiz-option.correct{border-color:#16794b;background:var(--green-soft)}
@@ -87,7 +89,6 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .quiz-option.correct .quiz-letter,.quiz-option.missed .quiz-letter{background:#16794b;color:#fff}
 .quiz-option.incorrect .quiz-letter{background:var(--red);color:#fff}
 .quiz-option .text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
-.quiz-option .pts{font-size:12px;color:var(--muted);padding:3px 8px;border-radius:99px;background:#f1f5f9;white-space:nowrap}
 .quiz-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .quiz-feedback{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:14px;display:none}
 .quiz-feedback.ok{background:var(--green-soft);color:#12633d;border:1px solid #bfe3cc;display:block}
@@ -95,7 +96,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .quiz-feedback.info{background:var(--primary-soft);color:#234c9b;border:1px solid #c7d9ff;display:block}
 .quiz-hint{color:var(--muted);font-size:13px;margin:4px 0 0}
 
-/* EXAM NAV */
+/* ====== EXAM NAV ====== */
 .exam-nav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:6px;margin-top:12px}
 .exam-nav-btn{min-height:40px;padding:4px;background:#fff;border:1px solid var(--line);color:#344054;font-weight:700;border-radius:8px;font-size:13px}
 .exam-nav-btn.answered{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
@@ -105,7 +106,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .exam-nav-btn.active.right{background:#16794b;color:#fff}
 .exam-nav-btn.active.wrong{background:var(--red);color:#fff}
 
-/* SCORE */
+/* ====== SCORE ====== */
 .score-big{text-align:center;padding:24px;border-radius:14px;margin-bottom:16px}
 .score-big.pass{background:var(--green-soft);border:1px solid #bfe3cc}
 .score-big.fail{background:var(--red-soft);border:1px solid #fecaca}
@@ -115,7 +116,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .score-big .label{font-size:18px;margin-top:8px;font-weight:800;letter-spacing:.5px}
 .score-big .sub{color:var(--muted);margin-top:6px;font-size:14px}
 
-/* HISTORY */
+/* ====== HISTORY ====== */
 .history-list{display:grid;gap:8px;margin-top:12px}
 .history-item{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
 .history-item .date{color:var(--muted);font-size:13px}
@@ -124,7 +125,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .history-item .badge.pass{background:var(--green-soft);color:#12633d}
 .history-item .badge.fail{background:var(--red-soft);color:#991b1b}
 
-/* REVIEW */
+/* ====== REVIEW OPTIONS ====== */
 .review-opt{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:start;padding:10px 12px;border-radius:10px;margin-bottom:7px;border:1px solid var(--line);background:#fff;font-size:14px}
 .review-opt.correct{background:var(--green-soft);border-color:#bfe3cc}
 .review-opt.incorrect{background:var(--red-soft);border-color:#fecaca}
@@ -136,8 +137,8 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 .review-opt.correct .tag-mini,.review-opt.missed .tag-mini{background:#d0f0dc;color:#12633d}
 .review-opt.incorrect .tag-mini{background:#fee2e2;color:#991b1b}
 
-@media(max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters .search-field{grid-column:1/-1}.filters button{width:100%}.stats{gap:8px}.stat{padding:11px}.stat strong{font-size:20px}.question-card{padding:16px}.answer{grid-template-columns:28px 1fr}.score{grid-column:2;justify-self:start}.nav{flex-direction:column}.nav-group{display:grid;grid-template-columns:1fr 1fr}.nav button{width:100%}.quiz-card{padding:16px}.score-big .num{font-size:42px}}
-@media(max-width:430px){.filters{grid-template-columns:1fr}.filters .search-field{grid-column:auto}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat span{font-size:11px}}
+@media(max-width:760px){.filters,.filters.filters-3{grid-template-columns:1fr 1fr}.filters .search-field{grid-column:1/-1}.filters button{width:100%}.stats{gap:8px}.stat{padding:11px}.stat strong{font-size:20px}.question-card{padding:16px}.answer{grid-template-columns:28px 1fr}.score{grid-column:2;justify-self:start}.nav{flex-direction:column}.nav-group{display:grid;grid-template-columns:1fr 1fr}.nav button{width:100%}.quiz-card{padding:16px}.score-big .num{font-size:42px}}
+@media(max-width:430px){.filters,.filters.filters-3{grid-template-columns:1fr}.filters .search-field{grid-column:auto}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat span{font-size:11px}}
 </style>
 </head>
 <body>
@@ -152,7 +153,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
 </nav>
 
 <main>
-  <!-- ===== ÔN TẬP ===== -->
+  <!-- ============= TAB: ÔN TẬP ============= -->
   <div id="panel-review" class="tab-panel active">
     <section class="stats">
       <div class="stat"><strong id="totalStat">—</strong><span>Tổng số câu trong dữ liệu</span></div>
@@ -162,8 +163,8 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
     <section class="panel">
       <div class="filters">
         <div class="search-field"><label for="search">Tìm câu hỏi hoặc nội dung đáp án</label><input id="search" type="search" placeholder="Nhập từ khóa…"></div>
-        <div><label for="sheetFilter">Phần chính</label><select id="sheetFilter"></select></div>
-        <div><label for="categoryFilter">Nhóm nội dung</label><select id="categoryFilter"></select></div>
+        <div><label for="sheetFilter">Phần chính</label><select id="sheetFilter"><option value="">Tất cả các phần</option></select></div>
+        <div><label for="categoryFilter">Nhóm nội dung</label><select id="categoryFilter"><option value="">Tất cả nhóm nội dung</option></select></div>
         <div><button id="resetBtn" class="secondary">Xóa lọc</button></div>
       </div>
       <div class="progress-row"><span id="positionText">Câu 0/0</span><span id="percentText">0% đã ôn</span></div>
@@ -186,17 +187,25 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
     </section>
   </div>
 
-  <!-- ===== LUYỆN TẬP ===== -->
+  <!-- ============= TAB: LUYỆN TẬP ============= -->
   <div id="panel-practice" class="tab-panel">
     <section class="stats">
-      <div class="stat"><strong id="prStatTotal">—</strong><span>Tổng số câu</span></div>
+      <div class="stat"><strong id="prStatTotal">—</strong><span>Câu trong bộ lọc</span></div>
       <div class="stat"><strong id="prStatDone">0</strong><span>Đã làm</span></div>
       <div class="stat"><strong id="prStatScore">0</strong><span>Điểm luyện tập</span></div>
+    </section>
+    <section class="panel">
+      <div class="filters filters-3">
+        <div><label for="prSheetFilter">Phần chính</label><select id="prSheetFilter"><option value="">Tất cả các phần</option></select></div>
+        <div><label for="prCategoryFilter">Nhóm nội dung</label><select id="prCategoryFilter"><option value="">Tất cả nhóm nội dung</option></select></div>
+        <div><button id="prResetBtn" class="secondary">Xóa lọc</button></div>
+      </div>
+      <div class="small" style="margin-top:10px">Đổi bộ lọc sẽ <b>bắt đầu lại</b> danh sách luyện tập theo nhóm vừa chọn.</div>
     </section>
     <section class="quiz-card">
       <div class="quiz-head"><div class="eyebrow" id="prNumber">CÂU HỎI</div><span class="tag" id="prSheet"></span></div>
       <h2 id="prQuestion">Đang tải…</h2>
-      <p class="quiz-hint">Tích vào ô vuông để chọn <b>tất cả</b> phương án đúng (gồm các đáp án gốc + 2 đáp án nhiễu lấy từ nhóm khác).</p>
+      <p class="quiz-hint">Tích vào ô vuông để chọn <b>tất cả</b> phương án đúng. Đáp án nhiễu được trộn ngẫu nhiên, không có gợi ý nào — bạn phải tự nhớ đáp án.</p>
       <div id="prOptions" class="quiz-options"></div>
       <div class="quiz-actions">
         <button id="prCheck" class="primary">Kiểm tra</button>
@@ -208,7 +217,7 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
     </section>
   </div>
 
-  <!-- ===== THI THỬ ===== -->
+  <!-- ============= TAB: THI THỬ ============= -->
   <div id="panel-exam" class="tab-panel">
     <section class="quiz-card" id="exStartScreen">
       <h2 style="margin-top:0">Bài thi thử 30 câu</h2>
@@ -258,7 +267,6 @@ h2{font-size:clamp(19px,3vw,25px);line-height:1.4;margin:12px 0 18px;white-space
   </div>
 </main>
 
-<!-- Nạp dữ liệu từ file data.js (bắt buộc). Nếu muốn 1 file duy nhất: bỏ dòng dưới, dán `const DATA = [...]` vào đầu script thứ 2 -->
 <script src="data.js"></script>
 <script>
 /* ===== Helpers ===== */
@@ -278,6 +286,68 @@ if (typeof DATA === 'undefined' || !Array.isArray(DATA)) {
 }
 
 const REVIEW_DATA = DATA.filter(q => Array.isArray(q.answers) && q.answers.length);
+
+/* ===== TABS ===== */
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === btn));
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (tab === 'practice' && !practiceState.inited) initPractice();
+    if (tab === 'exam') renderExamHistory();
+  });
+});
+
+/* ===== OPTIONS BUILDER (không hiển thị điểm/nhiễu) ===== */
+function buildOptions(q) {
+  const correct = q.answers.map(a => ({
+    text: String(a.text || '').trim(),
+    isCorrect: true,
+    score: (a.score === '' || a.score === null || a.score === undefined) ? 1 : Number(a.score) || 1
+  })).filter(c => c.text);
+  const correctKeys = new Set(correct.map(c => normalizeText(c.text)));
+
+  const pool = [];
+  DATA.forEach(other => {
+    if (other.category === q.category) return;
+    other.answers.forEach(a => {
+      const t = String(a.text || '').trim();
+      if (!t || correctKeys.has(normalizeText(t))) return;
+      pool.push(t);
+    });
+  });
+
+  const shuffled = shuffle(pool);
+  const wrongTexts = [];
+  const seen = new Set();
+  for (const t of shuffled) {
+    const k = normalizeText(t);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    wrongTexts.push(t);
+    if (wrongTexts.length >= 2) break;
+  }
+  const wrong = wrongTexts.map(t => ({ text: t, isCorrect: false, score: 0 }));
+  return shuffle([...correct, ...wrong]);
+}
+function scoreQuestion(options, selectedSet) {
+  let score = 0, max = 0, wrongSelected = 0;
+  options.forEach((o, i) => {
+    if (o.isCorrect) { max += o.score; if (selectedSet.has(i)) score += o.score; }
+    else if (selectedSet.has(i)) wrongSelected++;
+  });
+  score = Math.max(0, score - wrongSelected * 2);
+  return { score, max };
+}
+/* Chỉ hiện checkbox + chữ + letter, KHÔNG hiện điểm hay nhãn nhiễu */
+function optionHtml(o, i, selected, extraCls='') {
+  return `<label class="quiz-option ${selected?'selected':''} ${extraCls}" data-i="${i}">
+    <span class="checkbox">${CHECK_SVG}</span>
+    <span class="quiz-letter">${String.fromCharCode(65+i)}</span>
+    <span class="text">${escapeHtml(o.text)}</span>
+  </label>`;
+}
 
 /* ===== TAB: ÔN TẬP ===== */
 let filtered = REVIEW_DATA.slice();
@@ -360,81 +430,44 @@ fillSelect($('sheetFilter'),uniqueSorted(REVIEW_DATA.map(q=>q.sheet)),'Tất c�
 fillSelect($('categoryFilter'),uniqueSorted(REVIEW_DATA.map(q=>q.category)),'Tất cả nhóm nội dung');
 render();
 
-/* ===== TABS ===== */
-document.querySelectorAll('.tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === btn));
-    const tab = btn.dataset.tab;
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (tab === 'practice' && !practiceState.inited) initPractice();
-    if (tab === 'exam') renderExamHistory();
-  });
-});
-
-/* ===== OPTIONS BUILDER ===== */
-function buildOptions(q) {
-  const correct = q.answers.map(a => ({
-    text: String(a.text || '').trim(),
-    isCorrect: true,
-    score: (a.score === '' || a.score === null || a.score === undefined) ? 1 : Number(a.score) || 1
-  })).filter(c => c.text);
-  const correctKeys = new Set(correct.map(c => normalizeText(c.text)));
-
-  const pool = [];
-  DATA.forEach(other => {
-    if (other.category === q.category) return;
-    other.answers.forEach(a => {
-      const t = String(a.text || '').trim();
-      if (!t || correctKeys.has(normalizeText(t))) return;
-      pool.push(t);
-    });
-  });
-
-  const shuffled = shuffle(pool);
-  const wrongTexts = [];
-  const seen = new Set();
-  for (const t of shuffled) {
-    const k = normalizeText(t);
-    if (seen.has(k)) continue;
-    seen.add(k);
-    wrongTexts.push(t);
-    if (wrongTexts.length >= 2) break;
-  }
-  const wrong = wrongTexts.map(t => ({ text: t, isCorrect: false, score: 0 }));
-  return shuffle([...correct, ...wrong]);
-}
-function scoreQuestion(options, selectedSet) {
-  let score = 0, max = 0, wrongSelected = 0;
-  options.forEach((o, i) => {
-    if (o.isCorrect) { max += o.score; if (selectedSet.has(i)) score += o.score; }
-    else if (selectedSet.has(i)) wrongSelected++;
-  });
-  score = Math.max(0, score - wrongSelected * 2);
-  return { score, max };
-}
-function optionHtml(o, i, selected, extraCls='') {
-  return `<label class="quiz-option ${selected?'selected':''} ${extraCls}" data-i="${i}">
-    <span class="checkbox">${CHECK_SVG}</span>
-    <span class="quiz-letter">${String.fromCharCode(65+i)}</span>
-    <span class="text">${escapeHtml(o.text)}</span>
-    <span class="pts">${o.isCorrect ? 'Điểm: ' + o.score : 'Nhiễu'}</span>
-  </label>`;
-}
-
-/* ===== LUYỆN TẬP ===== */
+/* ===== LUYỆN TẬP (có bộ lọc theo phần/nhóm) ===== */
 const practiceState = { inited:false, list:[], idx:0, checked:false, selected:new Set(), totalScore:0, doneCount:0, options:[] };
+
+/* Lấy danh sách câu hỏi theo bộ lọc hiện tại của tab Luyện tập */
+function getPracticeList() {
+  const sheet = $('prSheetFilter').value;
+  const cat = $('prCategoryFilter').value;
+  return REVIEW_DATA.filter(q => {
+    if (sheet && String(q.sheet) !== sheet) return false;
+    if (cat && String(q.category) !== cat) return false;
+    return true;
+  });
+}
+
 function initPractice() {
   practiceState.inited = true;
-  practiceState.list = REVIEW_DATA.slice();
+  practiceState.list = getPracticeList();
   practiceState.idx = 0;
   practiceState.totalScore = 0;
   practiceState.doneCount = 0;
   $('prStatTotal').textContent = practiceState.list.length;
   $('prStatDone').textContent = '0';
   $('prStatScore').textContent = '0';
+  if (!practiceState.list.length) {
+    $('prNumber').textContent = 'KHÔNG CÓ CÂU PHÙ HỢP';
+    $('prSheet').textContent = '';
+    $('prQuestion').textContent = 'Không có câu hỏi nào trong nhóm bạn chọn. Hãy đổi bộ lọc.';
+    $('prOptions').innerHTML = '';
+    $('prCheck').disabled = true;
+    $('prNext').disabled = true;
+    $('prSkip').disabled = true;
+    $('prFeedback').className = 'quiz-feedback';
+    $('prFeedback').textContent = '';
+    return;
+  }
   renderPractice();
 }
+
 function renderPractice() {
   const q = practiceState.list[practiceState.idx];
   if (!q) return;
@@ -485,11 +518,28 @@ $('prCheck').addEventListener('click', () => {
   $('prCheck').disabled = true;
   $('prSkip').disabled = true;
   $('prNext').disabled = practiceState.idx >= practiceState.list.length - 1;
-  if (practiceState.idx >= practiceState.list.length - 1) fb.innerHTML += '<br><br>🎉 Bạn đã hoàn thành toàn bộ câu hỏi luyện tập!';
+  if (practiceState.idx >= practiceState.list.length - 1) fb.innerHTML += '<br><br>🎉 Bạn đã hoàn thành toàn bộ câu hỏi trong nhóm này!';
 });
 $('prNext').addEventListener('click', () => { if (practiceState.idx < practiceState.list.length - 1) { practiceState.idx++; renderPractice(); window.scrollTo({top:0,behavior:'smooth'}); } });
 $('prSkip').addEventListener('click', () => { if (practiceState.idx < practiceState.list.length - 1) { practiceState.idx++; renderPractice(); } });
 $('prRestart').addEventListener('click', () => { if (confirm('Làm lại từ đầu? Điểm luyện tập sẽ đặt lại về 0.')) initPractice(); });
+
+/* Bộ lọc của tab Luyện tập */
+fillSelect($('prSheetFilter'), uniqueSorted(REVIEW_DATA.map(q=>q.sheet)), 'Tất cả các phần');
+fillSelect($('prCategoryFilter'), uniqueSorted(REVIEW_DATA.map(q=>q.category)), 'Tất cả nhóm nội dung');
+$('prSheetFilter').addEventListener('change', () => {
+  const sheet = $('prSheetFilter').value;
+  const cats = uniqueSorted(REVIEW_DATA.filter(q=>!sheet||String(q.sheet)===sheet).map(q=>q.category));
+  fillSelect($('prCategoryFilter'), cats, 'Tất cả nhóm nội dung');
+  initPractice(); // bắt đầu lại danh sách theo lọc mới
+});
+$('prCategoryFilter').addEventListener('change', () => { initPractice(); });
+$('prResetBtn').addEventListener('click', () => {
+  $('prSheetFilter').value = '';
+  fillSelect($('prCategoryFilter'), uniqueSorted(REVIEW_DATA.map(q=>q.category)), 'Tất cả nhóm nội dung');
+  $('prCategoryFilter').value = '';
+  initPractice();
+});
 
 /* ===== THI THỬ ===== */
 const EXAM_SIZE = 30;
